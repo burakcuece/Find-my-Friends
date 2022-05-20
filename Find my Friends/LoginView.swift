@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import Firebase
+import GoogleSignIn
+
 
 struct LoginView: View {
     
@@ -59,18 +62,100 @@ struct LoginView: View {
                         .background(Color.blue)
                         .opacity(0.8)
                         .cornerRadius(25)
+                        .padding(.bottom, 20)
                 }
+                
+                HStack {
+                    
+                    
+                    
+                    Button {
+                        
+                        handleLogin()
+                        
+                    } label: {
+                        
+                        HStack(spacing: 15) {
+                            
+                            Image("google")
+                                .resizable()
+                                .renderingMode(.original)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                            
+                            Text("Login with Google")
+                                .font(.caption2)
+                                .fontWeight(.medium)
+                        }
+                        .foregroundColor(.blue)
+                        .opacity(0.8)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(
+                            Rectangle()
+                                .strokeBorder(.blue)
+                                .frame(width: 160)
+                        )
+                    }
+                }
+                
             }
             .padding()
         }
     }
-}
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
+    
+    func handleLogin() {
+        
+        // Google Sign in...
+        
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        
+        // Create Google Sign IN configuration object
+        
+        let config = GIDConfiguration(clientID: clientID)
+        
+        GIDSignIn.sharedInstance.signIn(with: config, presenting: getRootViewController())
+        {[self] user, err in
             
+            if let error = err {
+                print(error.localizedDescription)
+                return
+            }
             
+            guard
+                let authentication = user?.authentication,
+                let idToken = authentication.idToken
+            else {
+                return
+            }
             
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: authentication.accessToken)
+            
+            // Firebase Auth
+            
+            Auth.auth().signIn(with: credential) { result, err in
+                
+                if let error = err {
+                    print(error.localizedDescription)
+                    return
+                }
+                
+                // Displaying User Name
+                guard let user = result?.user else {
+                    return
+                }
+                print(user.displayName ?? "Succes!")
+            }
+        }
+        
     }
+    
+    
+    struct LoginView_Previews: PreviewProvider {
+        static var previews: some View {
+            LoginView()
+            
+        }
+    }
+    
 }
