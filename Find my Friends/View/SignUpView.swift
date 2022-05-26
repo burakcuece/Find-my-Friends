@@ -21,12 +21,12 @@ struct SignUpView : View {
                 
                 VStack (alignment: .leading, spacing: 15) {
                     
-                    Text("E-Mail")
+                    Text("Nutzername")
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(.gray)
                     
-                    TextField("E-Mail", text: $email)
+                    TextField("Nutzername", text: $username)
                         .padding()
                         .background(Color.white)
                         .cornerRadius(0.5)
@@ -40,12 +40,12 @@ struct SignUpView : View {
             
             VStack (alignment: .leading, spacing: 15) {
                 
-                Text("Nutzername")
+                Text("E-Mail")
                     .font(.caption)
                     .fontWeight(.bold)
                     .foregroundColor(.gray)
                 
-                TextField("Nutzername", text: $username)
+                TextField("E-Mail", text: $email)
                     .padding()
                     .background(Color.white)
                     .cornerRadius(0.5)

@@ -11,8 +11,8 @@ import GoogleSignIn
 
 struct SignInView : View {
     
-    @State var username = ""
-    @State var password = ""
+    @StateObject private var loginVM = LoginViewModel()
+    @EnvironmentObject var authentication: Authentication
     
     @AppStorage("log_Status") var log_Status = false
     
@@ -29,7 +29,8 @@ struct SignInView : View {
                         .fontWeight(.bold)
                         .foregroundColor(.gray)
                     
-                    TextField("Nutzername", text: $username)
+                    TextField("Nutzername", text: $loginVM.credentials.email)
+                        .keyboardType(.emailAddress)
                         .padding()
                         .background(Color.white)
                         .cornerRadius(0.5)
@@ -48,13 +49,17 @@ struct SignInView : View {
                     .fontWeight(.bold)
                     .foregroundColor(.gray)
                 
-                SecureField("Passwort", text: $password)
+                SecureField("Passwort", text: $loginVM.credentials.password)
+                
                     .padding()
                     .background(Color.white)
                     .cornerRadius(0.5)
                     .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
                     .shadow(color: Color.black.opacity(0.08), radius: 5, x: 0, y: -5)
                 
+                if loginVM.showProgressView {
+                    ProgressView()
+                }
                 
                 Button(action: {
                     
@@ -69,20 +74,20 @@ struct SignInView : View {
             .padding(.horizontal,25)
             .padding(.top)
             
-            Button(action: {
-                
-            }) {
-                Text("Login")
-                    .font(.system(size: 20))
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .padding(.vertical)
-                    .frame(width: UIScreen.main.bounds.width - 50)
-                    .background(
-                        
-                        Color.blue
-                    )
-                    .cornerRadius(8)
+            Button("Login") {
+                loginVM.login { success in
+                    authentication.updateValidation(success: success)
+                }
+            }
+            .disabled(loginVM.loginDisabled)
+            .font(.system(size: 20))
+            .foregroundColor(.white)
+            .padding(.vertical)
+            .frame(width: UIScreen.main.bounds.width - 50)
+            .background(Color.blue)
+            .cornerRadius(8)
+            .onTapGesture {
+                UIApplication.shared.endEditing()
             }
             
             HStack {
@@ -99,7 +104,7 @@ struct SignInView : View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 28, height: 28)
                         
-                        Text("Login with Google")
+                        Text("Continue with Google")
                             .font(.title3)
                             .fontWeight(.medium)
                     }
@@ -110,11 +115,13 @@ struct SignInView : View {
                             .strokeBorder(Color.blue)
                     )
                 }
+                
             }
             .padding(.horizontal, 25)
             .padding(.top, 25)
         }
-    
+        .autocapitalization(.none)
+        .disabled(loginVM.showProgressView)
     }
     
     func handleLogin() {
@@ -122,7 +129,7 @@ struct SignInView : View {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
         
         let config = GIDConfiguration(clientID: clientID)
-                
+        
         GIDSignIn.sharedInstance.signIn(with: config , presenting: getRootViewController()) {[self] user, err in
             
             if let error = err {
@@ -140,7 +147,7 @@ struct SignInView : View {
             let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: authentication.accessToken)
             
             Auth.auth().signIn(with: credential) { result, error in
-                                
+                
                 if let error = err {
                     print(error.localizedDescription)
                     return

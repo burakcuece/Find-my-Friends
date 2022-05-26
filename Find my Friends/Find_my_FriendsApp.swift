@@ -11,12 +11,23 @@ import GoogleSignIn
 
 @main
 struct Find_my_FriendsApp: App {
+    
+    @StateObject var authentication = Authentication()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        WindowGroup() {
+            
+            if authentication.isValidated {
+                MapView()
+                    .environmentObject(authentication)
+            } else {
+                HomeView()
+                    .environmentObject(authentication)
+            }
         }
     }
+    
 }
 
 class AppDelegate: NSObject, UIApplicationDelegate{

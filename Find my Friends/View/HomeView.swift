@@ -12,6 +12,7 @@ struct HomeView : View {
     @State var index = 0
     @Namespace var name
     
+    
     var body: some View {
         
         
@@ -113,5 +114,6 @@ struct HomeView : View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+
     }
 }
