@@ -8,8 +8,6 @@
 import SwiftUI
 import MapKit
 
-// MARK: - MKMapViewRepresentable
-
 struct MKMapViewRepresentable: UIViewRepresentable {
     
     var userTrackingMode: Binding<MKUserTrackingMode>
@@ -34,8 +32,6 @@ struct MKMapViewRepresentable: UIViewRepresentable {
         let coordinator = MapViewCoordinator(self)
         return coordinator
     }
-    
-    // MARK: - Coordinator
     
     class MapViewCoordinator: NSObject, MKMapViewDelegate, CLLocationManagerDelegate {
         
@@ -66,10 +62,9 @@ struct MKMapViewRepresentable: UIViewRepresentable {
             }
         }
         
+        
         private func present(_ alert: UIAlertController, animated: Bool = true, completion: (() -> Void)? = nil) {
-            // UIApplication.shared.keyWindow has been deprecated in iOS 13,
-            // so you need a little workaround to avoid the compiler warning
-            // https://stackoverflow.com/a/58031897/10967642
+            
             
             let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
             keyWindow?.rootViewController?.present(alert, animated: animated, completion: completion)
@@ -78,7 +73,7 @@ struct MKMapViewRepresentable: UIViewRepresentable {
         // MARK: MKMapViewDelegate
         
         func mapView(_ mapView: MKMapView, didChange mode: MKUserTrackingMode, animated: Bool) {
-            #if DEBUG
+#if DEBUG
             print("\(type(of: self)).\(#function): userTrackingMode=", terminator: "")
             switch mode {
             case .follow:            print(".follow")
@@ -86,7 +81,7 @@ struct MKMapViewRepresentable: UIViewRepresentable {
             case .none:              print(".none")
             @unknown default:        print("@unknown")
             }
-            #endif
+#endif
             
             if CLLocationManager.locationServicesEnabled() {
                 switch mode {
@@ -95,14 +90,14 @@ struct MKMapViewRepresentable: UIViewRepresentable {
                     case .notDetermined:
                         locationManager.requestWhenInUseAuthorization()
                     case .restricted:
-                        // Possibly due to active restrictions such as parental controls being in place
+                        
                         let alert = UIAlertController(title: "Location Permission Restricted", message: "The app cannot access your location. This is possibly due to active restrictions such as parental controls being in place. Please disable or remove them and enable location permissions in settings.", preferredStyle: .alert)
                         alert.addAction(UIAlertAction(title: "Settings", style: .default) { _ in
-                            // Redirect to Settings app
+                            
                             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                         })
                         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-
+                        
                         present(alert)
                         
                         DispatchQueue.main.async {
@@ -145,10 +140,10 @@ struct MKMapViewRepresentable: UIViewRepresentable {
             }
         }
         
-        // MARK: CLLocationManagerDelegate
         
         func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-            #if DEBUG
+            
+#if DEBUG
             print("\(type(of: self)).\(#function): status=", terminator: "")
             switch status {
             case .notDetermined:       print(".notDetermined")
@@ -158,7 +153,7 @@ struct MKMapViewRepresentable: UIViewRepresentable {
             case .authorizedWhenInUse: print(".authorizedWhenInUse")
             @unknown default:          print("@unknown")
             }
-            #endif
+#endif
             
             switch status {
             case .authorizedAlways, .authorizedWhenInUse:

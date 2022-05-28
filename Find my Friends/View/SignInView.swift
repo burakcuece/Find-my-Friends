@@ -24,12 +24,12 @@ struct SignInView : View {
                 
                 VStack (alignment: .leading, spacing: 15) {
                     
-                    Text("Nutzername")
+                    Text("E-Mail")
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(.gray)
                     
-                    TextField("Nutzername", text: $loginVM.credentials.email)
+                    TextField("E-Mail", text: $loginVM.credentials.email)
                         .keyboardType(.emailAddress)
                         .padding()
                         .background(Color.white)
@@ -75,8 +75,10 @@ struct SignInView : View {
             .padding(.top)
             
             Button("Login") {
-                loginVM.login { success in
-                    authentication.updateValidation(success: success)
+                DispatchQueue.main.async {
+                    loginVM.login { success in
+                        authentication.updateValidation(success: success)
+                    }
                 }
             }
             .disabled(loginVM.loginDisabled)
@@ -122,6 +124,9 @@ struct SignInView : View {
         }
         .autocapitalization(.none)
         .disabled(loginVM.showProgressView)
+        .alert(item: $loginVM.error) { error in
+            Alert(title: Text("Ungültige Anmeldung"), message: Text(error.localizedDescription))
+        }
     }
     
     func handleLogin() {

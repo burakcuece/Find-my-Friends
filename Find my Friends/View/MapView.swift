@@ -14,26 +14,37 @@ struct MapView: View {
     
     @StateObject private var loginVM = LoginViewModel()
     @State private var userTrackingMode: MKUserTrackingMode = .none
+    @EnvironmentObject var authentication: Authentication
     
     
     var body: some View {
-        ZStack {
-            MKMapViewRepresentable(userTrackingMode: $userTrackingMode)
-                .environmentObject(MapViewContainer())
-                .edgesIgnoringSafeArea(.all)
-            VStack {
-                if !(userTrackingMode == .follow || userTrackingMode == .followWithHeading) {
-                    HStack {
-                        Spacer()
-                        Button(action: { self.followUser() }) {
-                            Image(systemName: "location.fill")
-                                .modifier(MapButton(backgroundColor: .primary))
+        NavigationView {
+            ZStack {
+                
+                MKMapViewRepresentable(userTrackingMode: $userTrackingMode)
+                    .environmentObject(MapViewContainer())
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    if !(userTrackingMode == .follow || userTrackingMode == .followWithHeading) {
+                        HStack {
+                            Spacer()
+                            Button(action: { self.followUser() }) {
+                                Image(systemName: "location.fill")
+                                    .modifier(MapButton(backgroundColor: .primary))
+                            }
+                            .padding(.trailing)
                         }
-                        .padding(.trailing)
+                        .padding(.top)
                     }
-                    .padding(.top)
+                    Spacer()
                 }
-                Spacer()
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button("Log out") {
+                            authentication.updateValidation(success: false)
+                        }
+                    }
+                }
             }
         }
     }
@@ -59,4 +70,3 @@ fileprivate struct MapButton: ViewModifier {
     }
     
 }
-
