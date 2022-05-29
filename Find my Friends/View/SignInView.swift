@@ -62,10 +62,10 @@ struct SignInView : View {
                             Text("Passwort vergessen?")
                                 .font(.system(size: 14))
                                 .fontWeight(.bold)
-                                .foregroundColor(Color.blue)
+                                .foregroundColor(Color.black)
                         }.sheet(isPresented: $showingDetail, content: {
                             
-                            ForgotPasswordView()
+                            ForgotPasswordView(showHomeView: .constant(false))
                         })
                         .padding(.top,10)
                     }
