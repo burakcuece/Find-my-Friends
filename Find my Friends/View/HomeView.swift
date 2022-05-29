@@ -15,105 +15,103 @@ struct HomeView : View {
     
     var body: some View {
         
-        
-        VStack {
-            
-            Text("Willkommen!")
-                .font(.system(size: 50))
-            
-            Image(systemName: "person.2.circle")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 100, height: 100)
-                .foregroundColor(.blue)
-                .opacity(0.8)
-            
-            Text("Find my Friends")
-                .font(.title2)
-            
-            HStack(spacing: 0) {
+            VStack {
                 
-                Button(action: {
+                Text("Willkommen!")
+                    .font(.system(size: 50))
+                
+                Image(systemName: "person.2.circle")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 100, height: 100)
+                    .foregroundColor(.blue)
+                    .opacity(0.8)
+                
+                Text("Find my Friends")
+                    .font(.title2)
+                
+                HStack(spacing: 0) {
                     
-                    withAnimation(.spring()) {
+                    Button(action: {
                         
-                        index = 0
-                    }
-                    
-                }) {
-                    VStack {
-                        
-                        Text("Login")
-                            .font(.system(size: 20))
-                            .fontWeight(.bold)
-                            .foregroundColor(index == 0 ? .black : .gray)
-                        
-                        ZStack {
+                        withAnimation(.spring()) {
                             
-                            Capsule()
-                                .fill(Color.black.opacity(0.04))
-                                .frame(height: 4)
+                            index = 0
+                        }
+                        
+                    }) {
+                        VStack {
                             
-                            if index == 0 {
+                            Text("Login")
+                                .font(.system(size: 20))
+                                .fontWeight(.bold)
+                                .foregroundColor(index == 0 ? .black : .gray)
+                            
+                            ZStack {
                                 
                                 Capsule()
-                                    .fill(Color.blue)
+                                    .fill(Color.black.opacity(0.04))
                                     .frame(height: 4)
-                                    .matchedGeometryEffect(id: "Tab", in: name)
+                                
+                                if index == 0 {
+                                    
+                                    Capsule()
+                                        .fill(Color.blue)
+                                        .frame(height: 4)
+                                        .matchedGeometryEffect(id: "Tab", in: name)
+                                }
+                            }
+                        }
+                    }
+                    
+                    Button(action: {
+                        
+                        withAnimation(.spring()) {
+                            
+                            index = 1
+                        }
+                        
+                    }) {
+                        VStack {
+                            
+                            Text("Registrieren")
+                                .font(.system(size: 20))
+                                .fontWeight(.bold)
+                                .foregroundColor(index == 1 ? .black : .gray)
+                            
+                            
+                            ZStack {
+                                
+                                Capsule()
+                                    .fill(Color.black.opacity(0.04))
+                                    .frame(height: 4)
+                                
+                                if index == 1 {
+                                    
+                                    Capsule()
+                                        .fill(Color.blue)
+                                        .frame(height: 4)
+                                        .matchedGeometryEffect(id: "Tab", in: name)
+                                }
                             }
                         }
                     }
                 }
+                .padding(.top, 30)
                 
-                Button(action: {
+                if index == 0 {
                     
-                    withAnimation(.spring()) {
-                        
-                        index = 1
-                    }
-                    
-                }) {
-                    VStack {
-                        
-                        Text("Registrieren")
-                            .font(.system(size: 20))
-                            .fontWeight(.bold)
-                            .foregroundColor(index == 1 ? .black : .gray)
-                        
-                        
-                        ZStack {
-                            
-                            Capsule()
-                                .fill(Color.black.opacity(0.04))
-                                .frame(height: 4)
-                            
-                            if index == 1 {
-                                
-                                Capsule()
-                                    .fill(Color.blue)
-                                    .frame(height: 4)
-                                    .matchedGeometryEffect(id: "Tab", in: name)
-                            }
-                        }
-                    }
+                    SignInView()
+                } else {
+                    SignUpView()
                 }
-            }
-            .padding(.top, 30)
-            
-            if index == 0 {
-                
-                SignInView()
-            } else {
-                SignUpView()
             }
         }
     }
-}
-
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-
+        
     }
 }

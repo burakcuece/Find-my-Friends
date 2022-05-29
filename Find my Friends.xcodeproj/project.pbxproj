@@ -7,18 +7,56 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AC9642DB403C5991A8234DE /* Pods_Find_my_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04541740A0FF86B793B50297 /* Pods_Find_my_Friends.framework */; };
+		722F1911283A5861005BDE70 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F1910283A5861005BDE70 /* HomeView.swift */; };
+		722F1913283A58D9005BDE70 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F1912283A58D9005BDE70 /* SignInView.swift */; };
+		722F1915283A5972005BDE70 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F1914283A5972005BDE70 /* SignUpView.swift */; };
+		72542541283E1B3000C25FF3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72542540283E1B3000C25FF3 /* LocationManager.swift */; };
+		72542543283E9DC700C25FF3 /* MapViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72542542283E9DC700C25FF3 /* MapViewContainer.swift */; };
+		72542545283E9E3900C25FF3 /* MKMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72542544283E9E3900C25FF3 /* MKMapViewRepresentable.swift */; };
+		72542547283EA51500C25FF3 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72542546283EA51500C25FF3 /* Credentials.swift */; };
+		7254254A283EA56800C25FF3 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72542549283EA56800C25FF3 /* APIService.swift */; };
+		7254254C283EA77B00C25FF3 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7254254B283EA77B00C25FF3 /* UIApplication+Extension.swift */; };
+		7254254E283EAA2100C25FF3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7254254D283EAA2100C25FF3 /* LoginViewModel.swift */; };
+		72542550283EB2AD00C25FF3 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7254254F283EB2AD00C25FF3 /* Authentication.swift */; };
+		725AB722283BA6B700EE9CD6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725AB721283BA6B700EE9CD6 /* MapView.swift */; };
 		72D02196283686A500DE65D6 /* Find_my_FriendsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D02195283686A500DE65D6 /* Find_my_FriendsApp.swift */; };
-		72D02198283686A500DE65D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D02197283686A500DE65D6 /* ContentView.swift */; };
 		72D0219A283686A600DE65D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72D02199283686A600DE65D6 /* Assets.xcassets */; };
 		72D0219D283686A600DE65D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72D0219C283686A600DE65D6 /* Preview Assets.xcassets */; };
+		72D021A628368FF200DE65D6 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72D021A528368FF200DE65D6 /* credentials.plist */; };
+		72D021B02836971200DE65D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72D021AF2836971100DE65D6 /* GoogleService-Info.plist */; };
+		72D36B2B28427295008C33A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D36B2A28427295008C33A3 /* ContentView.swift */; };
+		72D36B2D2843520E008C33A3 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D36B2C2843520E008C33A3 /* ForgotPasswordView.swift */; };
+		72F8C631283805020082D840 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F8C630283805020082D840 /* View+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04541740A0FF86B793B50297 /* Pods_Find_my_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_my_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		722F1910283A5861005BDE70 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		722F1912283A58D9005BDE70 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		722F1914283A5972005BDE70 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		72542540283E1B3000C25FF3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		72542542283E9DC700C25FF3 /* MapViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewContainer.swift; sourceTree = "<group>"; };
+		72542544283E9E3900C25FF3 /* MKMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapViewRepresentable.swift; sourceTree = "<group>"; };
+		72542546283EA51500C25FF3 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		72542549283EA56800C25FF3 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		7254254B283EA77B00C25FF3 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		7254254D283EAA2100C25FF3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		7254254F283EB2AD00C25FF3 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		725AB721283BA6B700EE9CD6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		72D02192283686A500DE65D6 /* Find my Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find my Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72D02195283686A500DE65D6 /* Find_my_FriendsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Find_my_FriendsApp.swift; sourceTree = "<group>"; };
-		72D02197283686A500DE65D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		72D02199283686A600DE65D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72D0219C283686A600DE65D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		72D021A528368FF200DE65D6 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		72D021AF2836971100DE65D6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		72D021B12836ED3A00DE65D6 /* Find-my-Friends-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Find-my-Friends-Info.plist"; sourceTree = SOURCE_ROOT; };
+		72D36B2A28427295008C33A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		72D36B2C2843520E008C33A3 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		72F8C630283805020082D840 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		72F8C6362838215D0082D840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE2DB09219D2D42B3C4B4785 /* Pods-Find my Friends.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find my Friends.release.xcconfig"; path = "Target Support Files/Pods-Find my Friends/Pods-Find my Friends.release.xcconfig"; sourceTree = "<group>"; };
+		D7F5571E8B87374DBB0C1FF5 /* Pods-Find my Friends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find my Friends.debug.xcconfig"; path = "Target Support Files/Pods-Find my Friends/Pods-Find my Friends.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +64,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AC9642DB403C5991A8234DE /* Pods_Find_my_Friends.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44E7232826D3B1EEF49D184C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04541740A0FF86B793B50297 /* Pods_Find_my_Friends.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72542548283EA54E00C25FF3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				72542549283EA56800C25FF3 /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		725AB729283BBF1000EE9CD6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				72542540283E1B3000C25FF3 /* LocationManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		72D02189283686A500DE65D6 = {
 			isa = PBXGroup;
 			children = (
 				72D02194283686A500DE65D6 /* Find my Friends */,
 				72D02193283686A500DE65D6 /* Products */,
+				ED0C0C2536385DBA1728B351 /* Pods */,
+				44E7232826D3B1EEF49D184C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,8 +116,17 @@
 		72D02194283686A500DE65D6 /* Find my Friends */ = {
 			isa = PBXGroup;
 			children = (
+				72D021B12836ED3A00DE65D6 /* Find-my-Friends-Info.plist */,
+				72D021AF2836971100DE65D6 /* GoogleService-Info.plist */,
+				72D021A528368FF200DE65D6 /* credentials.plist */,
+				72F8C6362838215D0082D840 /* Info.plist */,
 				72D02195283686A500DE65D6 /* Find_my_FriendsApp.swift */,
-				72D02197283686A500DE65D6 /* ContentView.swift */,
+				72F8C63428381E850082D840 /* View */,
+				72F8C63528381E9D0082D840 /* ViewModel */,
+				72F8C63228381E670082D840 /* Model */,
+				72F8C63328381E750082D840 /* Extensions */,
+				72542548283EA54E00C25FF3 /* Services */,
+				725AB729283BBF1000EE9CD6 /* Manager */,
 				72D02199283686A600DE65D6 /* Assets.xcassets */,
 				72D0219B283686A600DE65D6 /* Preview Content */,
 			);
@@ -67,6 +141,56 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		72F8C63228381E670082D840 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72542544283E9E3900C25FF3 /* MKMapViewRepresentable.swift */,
+				72542546283EA51500C25FF3 /* Credentials.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		72F8C63328381E750082D840 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				72F8C630283805020082D840 /* View+Extension.swift */,
+				7254254B283EA77B00C25FF3 /* UIApplication+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		72F8C63428381E850082D840 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72D36B2A28427295008C33A3 /* ContentView.swift */,
+				722F1910283A5861005BDE70 /* HomeView.swift */,
+				722F1912283A58D9005BDE70 /* SignInView.swift */,
+				722F1914283A5972005BDE70 /* SignUpView.swift */,
+				72D36B2C2843520E008C33A3 /* ForgotPasswordView.swift */,
+				725AB721283BA6B700EE9CD6 /* MapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72F8C63528381E9D0082D840 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				72542542283E9DC700C25FF3 /* MapViewContainer.swift */,
+				7254254D283EAA2100C25FF3 /* LoginViewModel.swift */,
+				7254254F283EB2AD00C25FF3 /* Authentication.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		ED0C0C2536385DBA1728B351 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D7F5571E8B87374DBB0C1FF5 /* Pods-Find my Friends.debug.xcconfig */,
+				AE2DB09219D2D42B3C4B4785 /* Pods-Find my Friends.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72D021A0283686A600DE65D6 /* Build configuration list for PBXNativeTarget "Find my Friends" */;
 			buildPhases = (
+				3A132159D837690B23048EE5 /* [CP] Check Pods Manifest.lock */,
 				72D0218E283686A500DE65D6 /* Sources */,
 				72D0218F283686A500DE65D6 /* Frameworks */,
 				72D02190283686A500DE65D6 /* Resources */,
+				D3AAF2089994131DAE77153A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,19 +252,77 @@
 			buildActionMask = 2147483647;
 			files = (
 				72D0219D283686A600DE65D6 /* Preview Assets.xcassets in Resources */,
+				72D021B02836971200DE65D6 /* GoogleService-Info.plist in Resources */,
+				72D021A628368FF200DE65D6 /* credentials.plist in Resources */,
 				72D0219A283686A600DE65D6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3A132159D837690B23048EE5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Find my Friends-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3AAF2089994131DAE77153A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Find my Friends/Pods-Find my Friends-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Find my Friends/Pods-Find my Friends-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Find my Friends/Pods-Find my Friends-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		72D0218E283686A500DE65D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72D02198283686A500DE65D6 /* ContentView.swift in Sources */,
+				725AB722283BA6B700EE9CD6 /* MapView.swift in Sources */,
+				722F1915283A5972005BDE70 /* SignUpView.swift in Sources */,
+				72D36B2D2843520E008C33A3 /* ForgotPasswordView.swift in Sources */,
+				72542547283EA51500C25FF3 /* Credentials.swift in Sources */,
+				722F1913283A58D9005BDE70 /* SignInView.swift in Sources */,
+				72542545283E9E3900C25FF3 /* MKMapViewRepresentable.swift in Sources */,
+				7254254E283EAA2100C25FF3 /* LoginViewModel.swift in Sources */,
+				72542543283E9DC700C25FF3 /* MapViewContainer.swift in Sources */,
+				72542550283EB2AD00C25FF3 /* Authentication.swift in Sources */,
+				72F8C631283805020082D840 /* View+Extension.swift in Sources */,
+				722F1911283A5861005BDE70 /* HomeView.swift in Sources */,
 				72D02196283686A500DE65D6 /* Find_my_FriendsApp.swift in Sources */,
+				72D36B2B28427295008C33A3 /* ContentView.swift in Sources */,
+				7254254A283EA56800C25FF3 /* APIService.swift in Sources */,
+				72542541283E1B3000C25FF3 /* LocationManager.swift in Sources */,
+				7254254C283EA77B00C25FF3 /* UIApplication+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +445,7 @@
 		};
 		72D021A1283686A600DE65D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7F5571E8B87374DBB0C1FF5 /* Pods-Find my Friends.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -269,7 +454,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Find my Friends/Preview Content\"";
 				DEVELOPMENT_TEAM = 95W23GS9Y8;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "/Users/burakcuce/Documents/dev/Apps/Find my Friends/Find my Friends/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -290,6 +476,7 @@
 		};
 		72D021A2283686A600DE65D6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE2DB09219D2D42B3C4B4785 /* Pods-Find my Friends.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -298,7 +485,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Find my Friends/Preview Content\"";
 				DEVELOPMENT_TEAM = 95W23GS9Y8;
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = "/Users/burakcuce/Documents/dev/Apps/Find my Friends/Find my Friends/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

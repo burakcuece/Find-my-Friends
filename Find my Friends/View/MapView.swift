@@ -18,12 +18,14 @@ struct MapView: View {
     
     
     var body: some View {
+        
         NavigationView {
+            
             ZStack {
                 
                 MKMapViewRepresentable(userTrackingMode: $userTrackingMode)
                     .environmentObject(MapViewContainer())
-                    .edgesIgnoringSafeArea(.all)
+                
                 VStack {
                     if !(userTrackingMode == .follow || userTrackingMode == .followWithHeading) {
                         HStack {
@@ -40,11 +42,15 @@ struct MapView: View {
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Log out") {
-                            authentication.updateValidation(success: false)
+                        Button("Ausloggen") {
+                            authentication.updateValidation(success: true)
                         }
+                        
                     }
                 }
+                .navigationTitle("Find my Friends")
+                .navigationBarTitleDisplayMode(.inline)
+                
             }
         }
     }

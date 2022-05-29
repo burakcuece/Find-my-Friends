@@ -21,7 +21,7 @@ class Authentication: ObservableObject {
         var errorDescription: String? {
             switch self {
             case .invalidCredentials :
-                return NSLocalizedString("Entweder ist Ihre E-Mail-Adresse oder Ihr Passwort falsch. Bitte versuche es erneut", comment: "")
+                return NSLocalizedString("Entweder ist Ihre E-Mail-Adresse oder Ihr Passwort falsch. Bitte versuche es erneut.", comment: "")
             }
         }
     }
