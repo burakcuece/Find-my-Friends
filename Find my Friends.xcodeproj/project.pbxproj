@@ -11,6 +11,12 @@
 		722F1911283A5861005BDE70 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F1910283A5861005BDE70 /* HomeView.swift */; };
 		722F1913283A58D9005BDE70 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F1912283A58D9005BDE70 /* SignInView.swift */; };
 		722F1915283A5972005BDE70 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F1914283A5972005BDE70 /* SignUpView.swift */; };
+		724CAA7B2846B4B5001FD0C8 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724CAA7A2846B4B5001FD0C8 /* ChatView.swift */; };
+		724CAA8728479179001FD0C8 /* ChatRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724CAA8628479179001FD0C8 /* ChatRowView.swift */; };
+		724CAA89284793F5001FD0C8 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724CAA88284793F5001FD0C8 /* ChatModel.swift */; };
+		724CAA8B28479BEC001FD0C8 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724CAA8A28479BEB001FD0C8 /* Date+Extension.swift */; };
+		724CAA8D28479E84001FD0C8 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724CAA8C28479E84001FD0C8 /* ChatViewModel.swift */; };
+		724CAA912847A51C001FD0C8 /* ChatInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724CAA902847A51C001FD0C8 /* ChatInView.swift */; };
 		72542541283E1B3000C25FF3 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72542540283E1B3000C25FF3 /* LocationManager.swift */; };
 		72542543283E9DC700C25FF3 /* MapViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72542542283E9DC700C25FF3 /* MapViewContainer.swift */; };
 		72542545283E9E3900C25FF3 /* MKMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72542544283E9E3900C25FF3 /* MKMapViewRepresentable.swift */; };
@@ -35,6 +41,12 @@
 		722F1910283A5861005BDE70 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		722F1912283A58D9005BDE70 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		722F1914283A5972005BDE70 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		724CAA7A2846B4B5001FD0C8 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		724CAA8628479179001FD0C8 /* ChatRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRowView.swift; sourceTree = "<group>"; };
+		724CAA88284793F5001FD0C8 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		724CAA8A28479BEB001FD0C8 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		724CAA8C28479E84001FD0C8 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		724CAA902847A51C001FD0C8 /* ChatInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInView.swift; sourceTree = "<group>"; };
 		72542540283E1B3000C25FF3 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		72542542283E9DC700C25FF3 /* MapViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewContainer.swift; sourceTree = "<group>"; };
 		72542544283E9E3900C25FF3 /* MKMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKMapViewRepresentable.swift; sourceTree = "<group>"; };
@@ -146,6 +158,7 @@
 			children = (
 				72542544283E9E3900C25FF3 /* MKMapViewRepresentable.swift */,
 				72542546283EA51500C25FF3 /* Credentials.swift */,
+				724CAA88284793F5001FD0C8 /* ChatModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -155,6 +168,7 @@
 			children = (
 				72F8C630283805020082D840 /* View+Extension.swift */,
 				7254254B283EA77B00C25FF3 /* UIApplication+Extension.swift */,
+				724CAA8A28479BEB001FD0C8 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -168,6 +182,9 @@
 				722F1914283A5972005BDE70 /* SignUpView.swift */,
 				72D36B2C2843520E008C33A3 /* ForgotPasswordView.swift */,
 				725AB721283BA6B700EE9CD6 /* MapView.swift */,
+				724CAA7A2846B4B5001FD0C8 /* ChatView.swift */,
+				724CAA8628479179001FD0C8 /* ChatRowView.swift */,
+				724CAA902847A51C001FD0C8 /* ChatInView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,6 +195,7 @@
 				72542542283E9DC700C25FF3 /* MapViewContainer.swift */,
 				7254254D283EAA2100C25FF3 /* LoginViewModel.swift */,
 				7254254F283EB2AD00C25FF3 /* Authentication.swift */,
+				724CAA8C28479E84001FD0C8 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -308,9 +326,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				725AB722283BA6B700EE9CD6 /* MapView.swift in Sources */,
+				724CAA8D28479E84001FD0C8 /* ChatViewModel.swift in Sources */,
 				722F1915283A5972005BDE70 /* SignUpView.swift in Sources */,
+				724CAA89284793F5001FD0C8 /* ChatModel.swift in Sources */,
 				72D36B2D2843520E008C33A3 /* ForgotPasswordView.swift in Sources */,
 				72542547283EA51500C25FF3 /* Credentials.swift in Sources */,
+				724CAA8B28479BEC001FD0C8 /* Date+Extension.swift in Sources */,
 				722F1913283A58D9005BDE70 /* SignInView.swift in Sources */,
 				72542545283E9E3900C25FF3 /* MKMapViewRepresentable.swift in Sources */,
 				7254254E283EAA2100C25FF3 /* LoginViewModel.swift in Sources */,
@@ -318,11 +339,14 @@
 				72542550283EB2AD00C25FF3 /* Authentication.swift in Sources */,
 				72F8C631283805020082D840 /* View+Extension.swift in Sources */,
 				722F1911283A5861005BDE70 /* HomeView.swift in Sources */,
+				724CAA8728479179001FD0C8 /* ChatRowView.swift in Sources */,
 				72D02196283686A500DE65D6 /* Find_my_FriendsApp.swift in Sources */,
+				724CAA7B2846B4B5001FD0C8 /* ChatView.swift in Sources */,
 				72D36B2B28427295008C33A3 /* ContentView.swift in Sources */,
 				7254254A283EA56800C25FF3 /* APIService.swift in Sources */,
 				72542541283E1B3000C25FF3 /* LocationManager.swift in Sources */,
 				7254254C283EA77B00C25FF3 /* UIApplication+Extension.swift in Sources */,
+				724CAA912847A51C001FD0C8 /* ChatInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

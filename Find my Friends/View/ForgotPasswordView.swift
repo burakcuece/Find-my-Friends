@@ -64,7 +64,6 @@ struct ForgotPasswordView: View {
                   Image(systemName: "x.circle")
                         .resizable()
                         .frame(width: 40, height: 40)
-                        .foregroundColor(Color.black)
                     
             })
             .padding(.horizontal, 25)

@@ -17,8 +17,17 @@ struct Find_my_FriendsApp: App {
     var body: some Scene {
         WindowGroup() {
             
-            HomeView()
-           
+            TabView {
+                
+                MapView()
+                    .tabItem {
+                        Label("Karte", systemImage: "map.fill")
+                    }
+                ChatView()
+                    .tabItem {
+                        Label("Nachrichten", systemImage: "message.fill")
+                    }
+            }
         }
     }
     
