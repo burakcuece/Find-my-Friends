@@ -39,7 +39,7 @@ struct ChatRowView: View {
                     }
                 }
                 Circle()
-                    .foregroundColor(.blue)
+                    .foregroundColor(chat.hasUnreadMessage ? .blue : .clear)
                     .frame(width: 18, height: 18)
                     .frame(maxWidth: .infinity, alignment: .trailing)
             }

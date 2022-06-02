@@ -31,7 +31,7 @@ struct ChatView: View {
                         .frame(width: 0)
                         .opacity(0)
                     }
-                    .swipeActions(edge: .leading, allowsFullSwipe: true, content: {
+                    .swipeActions(edge: .leading, allowsFullSwipe: true) {
                         Button(action: {
                             viewModel.marksAsUnread(!chat.hasUnreadMessage, chat: chat)
                         }) {
@@ -42,7 +42,7 @@ struct ChatView: View {
                             }
                         }
                         .tint(.blue)
-                    })
+                    }
                 }
             }
             .listStyle(PlainListStyle())
@@ -59,5 +59,6 @@ struct ChatView: View {
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
         ChatView()
+
     }
 }

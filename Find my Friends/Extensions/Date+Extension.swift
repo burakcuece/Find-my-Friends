@@ -12,12 +12,13 @@ extension Date {
     func descriptiveString(dateStyle: DateFormatter.Style = .short) -> String {
         
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ger_GER")
         formatter.dateStyle = dateStyle
         
         let daysBetween = self.daysBetween(date: Date())
         
         if daysBetween == 0 {
-            return "Today"
+            return "Heute"
             
         } else if daysBetween == 1 {
             

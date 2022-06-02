@@ -78,7 +78,7 @@ struct ChatInView: View {
         VStack {
             let height: CGFloat = 38
             HStack {
-                TextField("Nachricht...", text: $text)
+                TextField("Nachricht", text: $text)
                     .padding(.horizontal, 10)
                     .frame(height: height)
                     .background(Color.white)
@@ -132,7 +132,7 @@ struct ChatInView: View {
                             }
                             .frame(width: viewWidth * 0.7, alignment: isReceived ? .leading : .trailing)
                             .padding(.vertical)
-                            //                    .background(Color.blue)
+                            
                         }
                         .frame(maxWidth: .infinity, alignment: isReceived ? .leading : .trailing)
                         .id(message.id)
@@ -162,6 +162,7 @@ struct ChatInView_Previews: PreviewProvider {
         NavigationView {
             ChatInView(chat: Chat.sampleChat[0])
                 .environmentObject(ChatViewModel())
+
         }
     }
 }
