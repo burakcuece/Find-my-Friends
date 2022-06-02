@@ -66,7 +66,7 @@ struct ChatInView: View {
         }
     }
     
-    func scrollTo(messageID: UUID, anchor: UnitPoint? = nil, shouldAnimate: Bool,                       scrollReader: ScrollViewProxy) {
+    func scrollTo(messageID: UUID, anchor: UnitPoint? = nil, shouldAnimate: Bool, scrollReader: ScrollViewProxy) {
         DispatchQueue.main.async {
             withAnimation(shouldAnimate ? Animation.easeIn : nil) {
                 scrollReader.scrollTo(messageID, anchor: anchor)
@@ -124,9 +124,10 @@ struct ChatInView: View {
                         HStack {
                             ZStack {
                                 Text(message.text)
+                                    .foregroundColor(Color.white)
                                     .padding(.horizontal)
                                     .padding(.vertical, 12)
-                                    .background(isReceived ? Color.black.opacity(0.2) : .green.opacity(0.9))
+                                    .background(isReceived ? Color.black.opacity(0.5) : .green.opacity(0.8))
                                     .cornerRadius(13)
                                 
                             }

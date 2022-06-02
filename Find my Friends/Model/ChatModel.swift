@@ -45,9 +45,9 @@ extension Chat {
     
     static let sampleChat = [
         Chat(person: Person(name: "Burak C.", imgString: "Burak"), messages: [
-            Message("Hey Burak", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 3)),
+            Message("Hey", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 3)),
             Message("Wie gehts", type: .Sent, date: Date(timeIntervalSinceNow: -86400 * 3)),
-            Message("Was machst du?", type: .Received, date: Date())
+            Message("Hey, gut und dir?", type: .Received, date: Date())
         ], hasUnreadMessage: true)
     ]
  }
