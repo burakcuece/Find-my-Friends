@@ -14,7 +14,9 @@ struct ChatView: View {
     
     var body: some View {
         NavigationView {
+            
             List {
+                
                 ForEach(viewModel.getSortedFilteredChats(query: query) ) { chat in
                     
                     ZStack {

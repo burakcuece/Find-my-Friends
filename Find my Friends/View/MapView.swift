@@ -17,6 +17,7 @@ struct MapView: View {
     @EnvironmentObject var authentication: Authentication
     
     
+    
     var body: some View {
         
         NavigationView {
@@ -25,10 +26,12 @@ struct MapView: View {
                 
                 MKMapViewRepresentable(userTrackingMode: $userTrackingMode)
                     .environmentObject(MapViewContainer())
-                
                 VStack {
+                    
                     if !(userTrackingMode == .follow || userTrackingMode == .followWithHeading) {
+                        
                         HStack {
+                            
                             Spacer()
                             Button(action: { self.followUser() }) {
                                 Image(systemName: "location.fill")
@@ -38,23 +41,21 @@ struct MapView: View {
                         }
                         .padding(.top)
                     }
-                    Spacer()
                 }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("Ausloggen") {
-                            authentication.updateValidation(success: true)
-                        }
-                        
-                    }
-                }
-                .navigationTitle("Find my Friends")
-                .navigationBarTitleDisplayMode(.inline)
                 
+                Spacer()
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button("Ausloggen") {
+                                authentication.updateValidation(success: true)
+                            }
+                        }
+                    }
+                    .navigationTitle("Find my Friends")
+                    .navigationBarTitleDisplayMode(.inline)
             }
         }
     }
-    
     private func followUser() {
         userTrackingMode = .follow
     }

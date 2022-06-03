@@ -23,10 +23,16 @@ struct Find_my_FriendsApp: App {
                     .tabItem {
                         Label("Karte", systemImage: "map.fill")
                     }
+                
+                FindFriendView()
+                    .tabItem {
+                        Label("Freunde Finden", systemImage: "person.2.fill")
+                    }
                 ChatView()
                     .tabItem {
                         Label("Nachrichten", systemImage: "message.fill")
                     }
+                
             }
         }
     }

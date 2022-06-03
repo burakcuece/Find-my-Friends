@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4AC9642DB403C5991A8234DE /* Pods_Find_my_Friends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04541740A0FF86B793B50297 /* Pods_Find_my_Friends.framework */; };
+		720BFB11284A68C20037CEE3 /* FindFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BFB10284A68C20037CEE3 /* FindFriendView.swift */; };
+		720BFB13284A6AAA0037CEE3 /* FindFriendRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BFB12284A6AAA0037CEE3 /* FindFriendRowView.swift */; };
 		722F1911283A5861005BDE70 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F1910283A5861005BDE70 /* HomeView.swift */; };
 		722F1913283A58D9005BDE70 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F1912283A58D9005BDE70 /* SignInView.swift */; };
 		722F1915283A5972005BDE70 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F1914283A5972005BDE70 /* SignUpView.swift */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		04541740A0FF86B793B50297 /* Pods_Find_my_Friends.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_my_Friends.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		720BFB10284A68C20037CEE3 /* FindFriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriendView.swift; sourceTree = "<group>"; };
+		720BFB12284A6AAA0037CEE3 /* FindFriendRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFriendRowView.swift; sourceTree = "<group>"; };
 		722F1910283A5861005BDE70 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		722F1912283A58D9005BDE70 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		722F1914283A5972005BDE70 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				724CAA7A2846B4B5001FD0C8 /* ChatView.swift */,
 				724CAA8628479179001FD0C8 /* ChatRowView.swift */,
 				724CAA902847A51C001FD0C8 /* ChatInView.swift */,
+				720BFB10284A68C20037CEE3 /* FindFriendView.swift */,
+				720BFB12284A6AAA0037CEE3 /* FindFriendRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -339,6 +345,7 @@
 				72542550283EB2AD00C25FF3 /* Authentication.swift in Sources */,
 				72F8C631283805020082D840 /* View+Extension.swift in Sources */,
 				722F1911283A5861005BDE70 /* HomeView.swift in Sources */,
+				720BFB11284A68C20037CEE3 /* FindFriendView.swift in Sources */,
 				724CAA8728479179001FD0C8 /* ChatRowView.swift in Sources */,
 				72D02196283686A500DE65D6 /* Find_my_FriendsApp.swift in Sources */,
 				724CAA7B2846B4B5001FD0C8 /* ChatView.swift in Sources */,
@@ -346,6 +353,7 @@
 				7254254A283EA56800C25FF3 /* APIService.swift in Sources */,
 				72542541283E1B3000C25FF3 /* LocationManager.swift in Sources */,
 				7254254C283EA77B00C25FF3 /* UIApplication+Extension.swift in Sources */,
+				720BFB13284A6AAA0037CEE3 /* FindFriendRowView.swift in Sources */,
 				724CAA912847A51C001FD0C8 /* ChatInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
