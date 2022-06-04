@@ -44,15 +44,8 @@ struct MapView: View {
                 }
                 
                 Spacer()
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Button("Ausloggen") {
-                                authentication.updateValidation(success: true)
-                            }
-                        }
-                    }
-                    .navigationTitle("Find my Friends")
-                    .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle("Find my Friends")
+                .navigationBarTitleDisplayMode(.inline)
             }
         }
     }

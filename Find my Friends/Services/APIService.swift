@@ -9,13 +9,16 @@ import Foundation
 
 class APIService {
     static let shared = APIService()
-    
-    func login(credentials: Credentials, completion: @escaping(Result<Bool,Authentication.AuthenticationError>) -> Void) {
+    enum APIError: Error {
+        case error
+    }
+
+    func login(credentials: Credentials, completion: @escaping (Result<Bool,APIError>) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             if credentials.password == "password" {
                 completion(.success(true))
             } else {
-                completion(.failure(.invalidCredentials))
+                completion(.failure(APIError.error))
             }
         }
     }

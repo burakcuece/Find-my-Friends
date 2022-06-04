@@ -12,7 +12,7 @@ import GoogleSignIn
 struct SignInView : View {
     
     @State var showingDetail = false
-
+    
     @StateObject private var loginVM = LoginViewModel()
     @EnvironmentObject var authentication: Authentication
     
@@ -20,114 +20,113 @@ struct SignInView : View {
     
     var body: some View {
         
-            VStack {
+        VStack {
+            
+            HStack {
                 
-                HStack {
+                VStack (alignment: .leading, spacing: 15) {
                     
-                    VStack (alignment: .leading, spacing: 15) {
-                        
-                        Text("E-Mail / Nutzername")
-                            .font(.caption)
-                            .fontWeight(.bold)
-                            .foregroundColor(.gray)
-                        
-                        TextField("E-Mail / Nutzername", text: $loginVM.credentials.email)
-                            .keyboardType(.emailAddress)
-                            .padding()
-                            .background(Color.white)
-                            .cornerRadius(0.5)
-                            .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
-                            .shadow(color: Color.black.opacity(0.08), radius: 5, x: 0, y: -5)
-                        
-                        Text("Passwort")
-                            .font(.caption)
-                            .fontWeight(.bold)
-                            .foregroundColor(.gray)
-                        
-                        SecureField("Passwort", text: $loginVM.credentials.password)
-                        
-                            .padding()
-                            .background(Color.white)
-                            .cornerRadius(0.5)
-                            .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
-                            .shadow(color: Color.black.opacity(0.08), radius: 5, x: 0, y: -5)
-                        
-                        if loginVM.showProgressView {
-                            ProgressView()
-                        }
-                        
-                        Button(action: {
-                            self.showingDetail.toggle()
-                        }) {
-                            Text("Passwort vergessen?")
-                                .font(.system(size: 14))
-                                .fontWeight(.bold)
-                                .foregroundColor(Color.black)
-                        }.sheet(isPresented: $showingDetail, content: {
-                            
-                            ForgotPasswordView(showHomeView: .constant(false))
-                        })
-                        .padding(.top,10)
-                    }
-                }
-                .padding(.horizontal,25)
-                .padding(.top, 30)
-                
-                Button("Login") {
-                    DispatchQueue.main.async {
-                        loginVM.login { success in
-                            authentication.updateValidation(success: success)
-                        }
-                    }
-                }
-                .disabled(loginVM.loginDisabled)
-                .font(.system(size: 20))
-                .foregroundColor(.white)
-                .padding(.vertical)
-                .frame(width: UIScreen.main.bounds.width - 50)
-                .background(Color.blue)
-                .cornerRadius(8)
-                .onTapGesture {
-                    UIApplication.shared.endEditing()
-                }
-                
-                HStack {
+                    Text("E-Mail / Nutzername")
+                        .font(.caption)
+                        .fontWeight(.bold)
+                        .foregroundColor(.gray)
                     
-                    
-                    VStack {
-                        
-                        Button(action: {
-                            handleLogin()
-                        }) {
-                            
-                            Image("google")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 28, height: 28)
-                            
-                            Text("Continue with Google")
-                                .font(.title3)
-                                .fontWeight(.medium)
-                        }
+                    TextField("E-Mail / Nutzername", text: $loginVM.credentials.email)
+                        .keyboardType(.emailAddress)
                         .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(
-                            Capsule()
-                                .strokeBorder(Color.blue)
-                        )
+                        .background(Color.white)
+                        .cornerRadius(0.5)
+                        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+                        .shadow(color: Color.black.opacity(0.08), radius: 5, x: 0, y: -5)
+                    
+                    Text("Passwort")
+                        .font(.caption)
+                        .fontWeight(.bold)
+                        .foregroundColor(.gray)
+                    
+                    SecureField("Passwort", text: $loginVM.credentials.password)
+                    
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(0.5)
+                        .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
+                        .shadow(color: Color.black.opacity(0.08), radius: 5, x: 0, y: -5)
+                    
+                    Button(action: {
+                        self.showingDetail.toggle()
+                    }) {
+                        Text("Passwort vergessen?")
+                            .font(.system(size: 14))
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.black)
+                    }.sheet(isPresented: $showingDetail, content: {
                         
-                    }
+                        ForgotPasswordView(showHomeView: .constant(false))
+                    })
+                    .padding(.top,10)
                 }
-                .padding(.horizontal, 25)
-                .padding(.top, 25)
+            }
+            .padding(.horizontal,25)
+            .padding(.top, 30)
+            
+            
+            
+            if loginVM.showProgressView {
+                ProgressView()
             }
             
-            .autocapitalization(.none)
-            .disabled(loginVM.showProgressView)
-            .alert(item: $loginVM.error) { error in
-                Alert(title: Text("Ungültige Anmeldung"), message: Text(error.localizedDescription))
+            Button("Login") {
+                    loginVM.login { success in
+                        authentication.updateValidation(success: success)
+
+                }
             }
+            .disabled(loginVM.loginDisabled)
+            .font(.system(size: 20))
+            .foregroundColor(.white)
+            .padding(.vertical)
+            .frame(width: UIScreen.main.bounds.width - 50)
+            .background(Color.blue)
+            .cornerRadius(8)
+            .onTapGesture {
+                UIApplication.shared.endEditing()
+            }
+            .autocapitalization(.none)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .disabled(loginVM.showProgressView)
+            
+            HStack {
+                
+                
+                VStack {
+                    
+                    Button(action: {
+                        handleLogin()
+                    }) {
+                        
+                        Image("google")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 28, height: 28)
+                        
+                        Text("Continue with Google")
+                            .font(.title3)
+                            .fontWeight(.medium)
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        Capsule()
+                            .strokeBorder(Color.blue)
+                    )
+                    
+                }
+            }
+            .padding(.horizontal, 25)
+            .padding(.top, 25)
         }
+        
+    }
     
     
     func handleLogin() {
