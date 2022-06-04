@@ -18,9 +18,13 @@ struct Find_my_FriendsApp: App {
     var body: some Scene {
         WindowGroup() {
             
-            ContentView()
-                .environmentObject(authentication)
-            
+            if authentication.isValidated {
+                ContentView()
+                    .environmentObject(authentication)
+            } else {
+                HomeView()
+                    .environmentObject(authentication)
+            }
         }
     }
 }
