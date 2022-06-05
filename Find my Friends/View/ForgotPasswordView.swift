@@ -56,14 +56,12 @@ struct ForgotPasswordView: View {
             .navigationTitle("Passwort vergessen")
             
             .navigationBarItems(trailing: Button(action: {
-                
-                print("Dissmissing home view")
-                
+                                
                 self.showHomeView = false }) {
                     
                   Image(systemName: "x.circle")
                         .resizable()
-                        .frame(width: 40, height: 40)
+                        .frame(width: 30, height: 30)
                     
             })
             .padding(.horizontal, 25)
