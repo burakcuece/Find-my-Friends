@@ -8,6 +8,6 @@
 import Foundation
 
 struct Credentials: Codable {
-    @State var email: String = ""
-    @State var password: String = ""
+    var email: String = ""
+    var password: String = ""
 }

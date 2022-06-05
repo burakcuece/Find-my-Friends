@@ -74,10 +74,7 @@ struct SignUpView : View {
                             .foregroundColor(.white)
                             .padding(.vertical)
                             .frame(width: UIScreen.main.bounds.width - 50)
-                            .background(
-                                
-                                Color.blue
-                            )
+                            .background(Color.blue)
                             .cornerRadius(8)
                     }
                 }
