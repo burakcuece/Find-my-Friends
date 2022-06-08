@@ -28,6 +28,7 @@
 		7254254E283EAA2100C25FF3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7254254D283EAA2100C25FF3 /* LoginViewModel.swift */; };
 		72542550283EB2AD00C25FF3 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7254254F283EB2AD00C25FF3 /* Authentication.swift */; };
 		725AB722283BA6B700EE9CD6 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725AB721283BA6B700EE9CD6 /* MapView.swift */; };
+		729C4D892850C33800326623 /* RegistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729C4D882850C33800326623 /* RegistViewModel.swift */; };
 		72D02196283686A500DE65D6 /* Find_my_FriendsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D02195283686A500DE65D6 /* Find_my_FriendsApp.swift */; };
 		72D0219A283686A600DE65D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72D02199283686A600DE65D6 /* Assets.xcassets */; };
 		72D0219D283686A600DE65D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72D0219C283686A600DE65D6 /* Preview Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		7254254D283EAA2100C25FF3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7254254F283EB2AD00C25FF3 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		725AB721283BA6B700EE9CD6 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		729C4D882850C33800326623 /* RegistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistViewModel.swift; sourceTree = "<group>"; };
 		72D02192283686A500DE65D6 /* Find my Friends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find my Friends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72D02195283686A500DE65D6 /* Find_my_FriendsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Find_my_FriendsApp.swift; sourceTree = "<group>"; };
 		72D02199283686A600DE65D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			children = (
 				72542542283E9DC700C25FF3 /* MapViewContainer.swift */,
 				7254254D283EAA2100C25FF3 /* LoginViewModel.swift */,
+				729C4D882850C33800326623 /* RegistViewModel.swift */,
 				7254254F283EB2AD00C25FF3 /* Authentication.swift */,
 				724CAA8C28479E84001FD0C8 /* ChatViewModel.swift */,
 			);
@@ -347,6 +350,7 @@
 				722F1911283A5861005BDE70 /* HomeView.swift in Sources */,
 				720BFB11284A68C20037CEE3 /* FindFriendView.swift in Sources */,
 				724CAA8728479179001FD0C8 /* ChatRowView.swift in Sources */,
+				729C4D892850C33800326623 /* RegistViewModel.swift in Sources */,
 				72D02196283686A500DE65D6 /* Find_my_FriendsApp.swift in Sources */,
 				724CAA7B2846B4B5001FD0C8 /* ChatView.swift in Sources */,
 				72D36B2B28427295008C33A3 /* ContentView.swift in Sources */,
