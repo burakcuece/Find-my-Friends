@@ -100,7 +100,6 @@ struct HomeView : View {
                 .padding(.top, 30)
                 
                 if index == 0 {
-                    
                     SignInView()
                 } else {
                     SignUpView()

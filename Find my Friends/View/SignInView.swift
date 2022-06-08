@@ -12,6 +12,8 @@ import GoogleSignIn
 struct SignInView : View {
     
     @State var showingDetail = false
+    @State private var isPresented = false
+    
     
     @StateObject private var loginVM = LoginViewModel()
     @EnvironmentObject var authentication: Authentication
@@ -75,10 +77,11 @@ struct SignInView : View {
             }
             
             Button("Login") {
-                    loginVM.login { success in
-                        authentication.updateValidation(success: success)
-
-                }
+                self.isPresented.toggle()
+                
+            }
+            .fullScreenCover(isPresented: $isPresented) {
+                ContentView()
             }
             .disabled(loginVM.loginDisabled)
             .font(.system(size: 20))
@@ -169,7 +172,6 @@ struct SignInView : View {
         }
     }
 }
-
 
 struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
