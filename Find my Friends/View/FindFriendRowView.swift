@@ -43,7 +43,6 @@ struct FindFriendRowView: View {
                                 print("Hinzufügen")
                             } label: {
                                 Text("Hinzufügen")
-                                    .bold()
                                     .foregroundColor(.white)
                                     .padding(.horizontal)
                                     .background(Color.blue.opacity(0.8))
@@ -56,7 +55,6 @@ struct FindFriendRowView: View {
                                 print("Entfernen")
                             } label: {
                                 Text("Entfernen")
-                                    .bold()
                                     .foregroundColor(.black)
                                     .padding(.horizontal)
                                     .background(Color.gray.opacity(0.6))

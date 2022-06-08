@@ -23,10 +23,12 @@ struct ChatRowView: View {
                     HStack {
                         Text(chat.person.name)
                             .bold()
+                            .foregroundColor(Color.black)
                         
                         Spacer()
                         
                         Text(chat.messages.last?.date.descriptiveString() ?? "")
+                            .foregroundColor(Color.black)
                     }
                     HStack {
                         Text(chat.messages.last?.text ?? "")

@@ -14,9 +14,8 @@ struct MapView: View {
     
     @StateObject private var loginVM = LoginViewModel()
     @State private var userTrackingMode: MKUserTrackingMode = .none
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var authentication: Authentication
-    
-    
     
     var body: some View {
         
@@ -46,8 +45,15 @@ struct MapView: View {
                 Spacer()
                 .navigationTitle("Find my Friends")
                 .navigationBarTitleDisplayMode(.inline)
+                .navigationBarItems(trailing: Button("Ausloggen") {
+                    presentationMode.wrappedValue.dismiss()
+                })
+                .foregroundColor(Color.blue)
             }
         }
+        
+        
+        
     }
     private func followUser() {
         userTrackingMode = .follow

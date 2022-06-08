@@ -17,7 +17,7 @@ struct SignInView : View {
     
     @StateObject private var loginVM = LoginViewModel()
     @EnvironmentObject var authentication: Authentication
-    
+
     @AppStorage("log_Status") var log_Status = false
     
     var body: some View {
@@ -28,12 +28,12 @@ struct SignInView : View {
                 
                 VStack (alignment: .leading, spacing: 15) {
                     
-                    Text("E-Mail / Nutzername")
+                    Text("E-Mail oder Benutzername")
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(.gray)
                     
-                    TextField("E-Mail / Nutzername", text: $loginVM.credentials.email)
+                    TextField("E-Mail oder Benutzername", text: $loginVM.credentials.email)
                         .keyboardType(.emailAddress)
                         .padding()
                         .background(Color.white)
