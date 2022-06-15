@@ -1,5 +1,5 @@
 //
-//  RegistViewModel.swift
+//  RegisterViewModel.swift
 //  Find my Friends
 //
 //  Created by Burak Cüce on 08.06.22.
