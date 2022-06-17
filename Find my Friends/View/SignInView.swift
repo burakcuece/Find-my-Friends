@@ -14,7 +14,6 @@ struct SignInView : View {
     @State var showingDetail = false
     @State private var isPresented = false
     
-    
     @StateObject private var loginVM = LoginViewModel()
     @EnvironmentObject var authentication: Authentication
 
