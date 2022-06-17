@@ -1,5 +1,5 @@
 //
-//  FindFriendView.swift
+//  FriendsView.swift
 //  Friends
 //
 //  Created by Burak Cüce on 03.06.22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FindFriendView: View {
+struct FriendsView: View {
     var body: some View {
         
         NavigationView {
@@ -16,7 +16,7 @@ struct FindFriendView: View {
             ForEach(0..<1) { _ in
                 
                 List {
-                    FindFriendRowView()
+                    FriendsRowView()
                 }
                 
             }
@@ -26,8 +26,8 @@ struct FindFriendView: View {
     }
 }
 
-struct FindFriendView_Previews: PreviewProvider {
+struct FriendsView_Previews: PreviewProvider {
     static var previews: some View {
-        FindFriendView()
+        FriendsView()
     }
 }

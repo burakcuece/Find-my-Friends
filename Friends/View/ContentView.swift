@@ -17,7 +17,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Karte", systemImage: "map.fill")
                 }
-            FindFriendView()
+            FriendsView()
                 .tabItem {
                     Label("Freunde finden", systemImage: "person.2.fill")
                 }

@@ -1,5 +1,5 @@
 //
-//  FindFriendRowView.swift
+//  FriendsRowView.swift
 //  Friends
 //
 //  Created by Burak Cüce on 03.06.22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FindFriendRowView: View {
+struct FriendsRowView: View {
     var body: some View {
         ZStack {
             
@@ -71,8 +71,8 @@ struct FindFriendRowView: View {
     }
 }
 
-struct FindFriendRowView_Previews: PreviewProvider {
+struct FriendsRowView_Previews: PreviewProvider {
     static var previews: some View {
-        FindFriendRowView()
+        FriendsRowView()
     }
 }
