@@ -19,42 +19,57 @@ struct MapView: View {
     
     var body: some View {
         
-        NavigationView {
+        
+        ZStack {
             
-            ZStack {
+            MKMapViewRepresentable(userTrackingMode: $userTrackingMode)
+                .environmentObject(MapViewContainer())
+            VStack {
                 
-                MKMapViewRepresentable(userTrackingMode: $userTrackingMode)
-                    .environmentObject(MapViewContainer())
-                VStack {
+                if !(userTrackingMode == .follow || userTrackingMode == .followWithHeading) {
                     
-                    if !(userTrackingMode == .follow || userTrackingMode == .followWithHeading) {
+                    HStack {
                         
-                        HStack {
-                            
-                            Spacer()
-                            Button(action: { self.followUser() }) {
-                                Image(systemName: "location.fill")
-                                    .modifier(MapButton(backgroundColor: .primary))
-                            }
-                            .padding(.trailing)
+                        Spacer()
+                        Button(action: { self.followUser() }) {
+                            Image(systemName: "location.fill")
+                                .modifier(MapButton(backgroundColor: .primary))
                         }
-                        .padding(.top)
+                        .padding(.trailing)
                     }
+                    .padding(.top)
                 }
+            }
+            .sheet(isPresented: .constant(true)) {
+                VStack(spacing: 15) {
+                    TextField("Suche Freunde" , text:
+                            .constant(""))
+                    .padding(.vertical,10)
+                    .padding(.horizontal)
+                    .background {
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .fill(.ultraThickMaterial)
+                    }
+                    
+                }
+                .padding()
+                .padding(.top)
                 
-                Spacer()
-                .navigationTitle("Friends")
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationBarItems(trailing: Button("Ausloggen") {
-                    presentationMode.wrappedValue.dismiss()
-                })
-                .foregroundColor(Color.blue)
             }
         }
-        
-        
-        
     }
+    
+    @ViewBuilder
+    func FriendList() -> some View {
+        VStack(spacing: 25) {
+            HStack(spacing: 12) {
+                
+            }
+        }
+    }
+
+    
+    
     private func followUser() {
         userTrackingMode = .follow
     }
