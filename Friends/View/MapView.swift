@@ -10,6 +10,7 @@ import CoreLocation.CLLocation
 import MapKit.MKAnnotationView
 import MapKit.MKUserLocation
 
+
 struct MapView: View {
     
     @StateObject private var loginVM = LoginViewModel()
@@ -23,6 +24,7 @@ struct MapView: View {
         ZStack {
             
             MKMapViewRepresentable(userTrackingMode: $userTrackingMode)
+                .ignoresSafeArea(.all)
                 .environmentObject(MapViewContainer())
             VStack {
                 
@@ -40,69 +42,10 @@ struct MapView: View {
                     .padding(.top)
                 }
             }
-            .sheet(isPresented: .constant(true)) {
-                VStack(spacing: 15) {
-                    TextField("Suche Freunde" , text: .constant(""))
-                        .padding(.vertical,10)
-                        .padding(.horizontal)
-                        .background {
-                            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                            .fill(.ultraThickMaterial)
-                        }
-                    FriendList()
-                }
-                
-                .padding()
-                .padding(.top,15)
-                
-            }
+            
         }
     }
-    
-    @ViewBuilder
-    func FriendList() -> some View {
-        VStack(spacing: 25) {
-            ForEach(friends) { friend in
-                HStack(spacing: 12) {
-                    Text("#\(getIndex(friend: friend) + 1)")
-                        .foregroundColor(Color.black)
-                        .fontWeight(.semibold)
-                    
-                    Image(friend.friendImage)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 50, height: 50)
-                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-                    
-                    Button {
-                        print("Liked")
-                    } label: {
-                        Image(systemName: friend.isLiked ? "suit.heart.fill" : "suit.heart")
-                            .font(.title3)
-                            .foregroundColor(friend.isLiked ? .red : .primary)
-                    }
-                    
-                    Button {
-                        print("Tapped")
-                    } label: {
-                        Image(systemName: "ellipsis")
-                            .font(.title3)
-                            .foregroundColor(.primary)
-                    }
-                    
-                    
-                }
-            }
-        }
-        .padding(.top,15)
-    }
-    
-    func getIndex(friend: Friend) -> Int {
-        return friends.firstIndex { CFriend in
-            CFriend.id == friend.id
-        } ?? 0
-    }
-    
+
     private func followUser() {
         userTrackingMode = .follow
     }
@@ -123,4 +66,10 @@ fileprivate struct MapButton: ViewModifier {
             .clipShape(Circle())
     }
     
+}
+
+struct MapView_Previews: PreviewProvider {
+    static var previews: some View {
+        MapView()
+    }
 }
