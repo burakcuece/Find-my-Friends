@@ -13,6 +13,7 @@
 		72113F97285CFD4300750DF2 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 72113F96285CFD4300750DF2 /* FirebaseStorage */; };
 		72113F9A285CFD9600750DF2 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 72113F99285CFD9600750DF2 /* GoogleSignIn */; };
 		72113FA0285E4EAC00750DF2 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72113F9F285E4EAC00750DF2 /* Friend.swift */; };
+		72113FA2285F3AB300750DF2 /* Sheet+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72113FA1285F3AB300750DF2 /* Sheet+Extensions.swift */; };
 		722F1911283A5861005BDE70 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F1910283A5861005BDE70 /* HomeView.swift */; };
 		722F1913283A58D9005BDE70 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F1912283A58D9005BDE70 /* SignInView.swift */; };
 		722F1915283A5972005BDE70 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722F1914283A5972005BDE70 /* SignUpView.swift */; };
@@ -46,6 +47,7 @@
 		720BFB10284A68C20037CEE3 /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 		720BFB12284A6AAA0037CEE3 /* FriendsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsRowView.swift; sourceTree = "<group>"; };
 		72113F9F285E4EAC00750DF2 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		72113FA1285F3AB300750DF2 /* Sheet+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sheet+Extensions.swift"; sourceTree = "<group>"; };
 		722F1910283A5861005BDE70 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		722F1912283A58D9005BDE70 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		722F1914283A5972005BDE70 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				72F8C630283805020082D840 /* View+Extension.swift */,
 				7254254B283EA77B00C25FF3 /* UIApplication+Extension.swift */,
 				724CAA8A28479BEB001FD0C8 /* Date+Extension.swift */,
+				72113FA1285F3AB300750DF2 /* Sheet+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				724CAA8B28479BEC001FD0C8 /* Date+Extension.swift in Sources */,
 				722F1913283A58D9005BDE70 /* SignInView.swift in Sources */,
 				72542545283E9E3900C25FF3 /* MKMapViewRepresentable.swift in Sources */,
+				72113FA2285F3AB300750DF2 /* Sheet+Extensions.swift in Sources */,
 				7254254E283EAA2100C25FF3 /* LoginViewModel.swift in Sources */,
 				72542543283E9DC700C25FF3 /* MapViewContainer.swift in Sources */,
 				72113FA0285E4EAC00750DF2 /* Friend.swift in Sources */,
