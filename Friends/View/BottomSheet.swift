@@ -19,7 +19,7 @@ struct BottomSheet: View {
             
             Capsule()
                 .fill(Color.gray.opacity(0.5))
-                .frame(width: 50, height: 50)
+                .frame(width: 50, height: 5)
                 .padding(.top)
                 .padding(.bottom, 5)
             
@@ -39,7 +39,7 @@ struct BottomSheet: View {
                     
                 }
             }
-            .padding(.vertical, 10)
+            .padding(.vertical, 20)
             .padding(.horizontal)
             // BlurView
             .background(BlurView(style: .systemMaterial))
