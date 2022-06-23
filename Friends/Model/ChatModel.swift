@@ -50,5 +50,5 @@ extension Chat {
             Message("Hey, gut und dir?", type: .Received, date: Date())
         ], hasUnreadMessage: true)
     ]
- }
-            
+}
+
